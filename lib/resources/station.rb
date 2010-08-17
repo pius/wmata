@@ -8,7 +8,7 @@ module WMATA
   # * +lat+ - The latitude of the station.
   # * +lon+ - The longitude of the station.
   #
-  StationTogether2 - Unused.
+  # StationTogether2 - Unused.
   class Station < Resource
     service "Rail"
     endpoint "JStations"
