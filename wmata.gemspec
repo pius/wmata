@@ -44,7 +44,7 @@ Gem::Specification.new do |s|
      "test/test_wmata.rb",
      "wmata.gemspec"
   ]
-  s.homepage = %q{http://github.com/jm/wmata}
+  s.homepage = %q{http://github.com/intridea/wmata}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.6}
