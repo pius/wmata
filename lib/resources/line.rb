@@ -26,7 +26,7 @@ module WMATA
         
       # NOTE: We memoize this since (a) there's no way to ask for just one line and
       # (b) they're unlikely to change while we're doing a request.
-      def get_all(params)
+      def get_all(params = {})
         @lines ||= get_all_without_memoize(params)
       end
       
