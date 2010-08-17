@@ -1,6 +1,38 @@
 = wmata
 
-Description goes here.
+Jeremy McAnally - Intridea
+
+A nice little gem for accessing the WMATA data API (http://developer.wmata.com).
+
+== Installing / Getting Started
+
+First, install the gem...
+
+    gem install wmata
+    
+...or use your Git clone.  It's up to you. :)
+
+Next, mosey on over to http://developer.wmata.com and get yourself a developer account.  Create an application (it can just be named "test" or whatever for now) and get your API key.  You'll need to provide your API key for any API work you'll be doing.
+
+To get started using the gem, require it (of course), and then set your API key:
+
+    WMATA.api_key = "ab7bce7ba8e08ccca9ce80ab890eb8a9dd"
+    
+Now you're ready to rock and roll!
+
+== Usage
+
+The gem's functionality is primarily oriented around the +WMATA+ module.  For example, to get all the rail lines available, you'd do this:
+
+    WMATA.lines
+    
+This will give you an array of +Line+ objects to manipulate.  So, you could do something like this:
+
+    WMATA.lines.first.incidents
+    
+This code would give you an array of +Incident+ objects that you can manipulate.  Essentially, its usage boils down to a simple maxim: most of the fetching logic should be accessed through the +WMATA+ module or the domain objects returned from methods called on methods called on +WMATA+.  You can call the fetching logic directly (e.g., +Line.get_all+), but it's smarter to use the public API. 
+
+For detailed information about what methods are available, see the documentation for +WMATA+ and each individual resource class.
 
 == Note on Patches/Pull Requests
  
