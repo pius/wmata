@@ -66,12 +66,3 @@ module WMATA
     alias_method :entrances_near, :entrances
   end
 end
-
-# require 'pp'
-# WMATA.api_key = "aekjtmq6v498pzt96srbsnac"
-# pp WMATA.stations
-# pp WMATA.stations_on_line("RD")
-# pp WMATA.station("A10")
-# pp WMATA.stations_on_line(:red)
-# pp WMATA.elevator_incidents
-# pp WMATA.entrances(:lat => 38.878586, :lon => 76.989626, :radius => 3200)
