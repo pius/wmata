@@ -33,6 +33,13 @@ module WMATA
       def symbol_to_line_code(symbol)
         SYMBOL_TO_LINES_MAP[symbol]
       end
+      
+      # Get a specific line, identified by line code (e.g., "RD") or a +Symbol+
+      # string name (e.g., +:red+).
+      def get(code)
+        code = Line.symbol_to_line_code(code) if code.is_a?(Symbol)
+        get_all.select {|l| l.code == code}.pop
+      end
     end
     
     # Get the first station on this line.
@@ -66,13 +73,6 @@ module WMATA
     end
     
     alias_method :stations, :route
-    
-    # Get a specific line, identified by line code (e.g., "RD") or a +Symbol+
-    # string name (e.g., +:red+).
-    def get(code)
-      code = Line.symbol_to_line_code(code) if code.is_a?(Symbol)
-      get_all.select {|l| l.code == code}.pop
-    end
     
     # Returns the line's code (also available as +line_code+).
     def code
